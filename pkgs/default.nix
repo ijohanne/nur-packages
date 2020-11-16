@@ -7,8 +7,8 @@
   yubikey-touch-detector = pkgs.callPackage ./yubikey-touch-detector { inherit sources; };
   lua-language-server = pkgs.callPackage ./lua-language-server { inherit sources; };
   gping = pkgs.callPackage ./gping { inherit sources; };
-  fishPlugins = (pkgs.fishPlugins or { }) // import ./fish-plugins { inherit pkgs sources; };
-  vimPlugins = (pkgs.vimPlugins or { }) // import ./vim-plugins { inherit pkgs sources; };
+  fishPlugins = pkgs.callPackage ./fish-plugins { inherit pkgs sources; };
+  vimPlugins = pkgs.callPackage ./vim-plugins { inherit pkgs sources; };
   neovim-nightly = pkgs.callPackage ./neovim-nightly { inherit pkgs sources; };
   firefoxPlugins = pkgs.callPackage ./firefox-plugins { };
 }

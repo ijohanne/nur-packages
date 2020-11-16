@@ -1,15 +1,4 @@
-# This file provides all the buildable and cacheable packages and
-# package outputs in you package set. These are what gets built by CI,
-# so if you correctly mark packages as
-#
-# - broken (using `meta.broken`),
-# - unfree (using `meta.license.free`), and
-# - locally built (using `preferLocalBuild`)
-#
-# then your CI will be able to build and cache only those packages for
-# which this is possible.
-
-{ pkgs ? import <nixpkgs> { } }:
+{ sources ? import ./nix/sources.nix, pkgs ? import sources.nixpkgs { } }:
 
 with builtins;
 let
