@@ -251,6 +251,19 @@
         "url": "https://github.com/francoiscabrol/ranger.vim/archive/91e82debdf566dfaf47df3aef0a5fd823cedf41c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+"nvim-web-devicons": {
+    "branch": "master",
+    "description": "lua `fork` of vim-web-devicons for neovim",
+    "homepage": null,
+    "owner": "kyazdani42",
+    "repo": "nvim-web-devicons",
+    "rev": "61693bf98df40dc17354edd5f92311e2aaa0f5cc",
+    "sha256": "0siifa9gxj6kz9w4fpnra6afyri6y0b34605aqkf7820krhcmckz",
+    "type": "tarball",
+    "url": "https://github.com/kyazdani42/nvim-web-devicons/archive/61693bf98df40dc17354edd5f92311e2aaa0f5cc.tar.gz",
+    "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+},
+
     "ranger_devicons": {
         "branch": "main",
         "description": "Ranger plugin that adds file glyphs / icon support to Ranger",

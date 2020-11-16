@@ -22,6 +22,5 @@ rustPlatform.buildRustPackage rec {
     description = "A daemon for managing long running shell commands";
     homepage = "https://github.com/Nukesor/pueue";
     license = licenses.mit;
-    maintainers = [ maintainers.marsam ];
   };
 }

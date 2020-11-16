@@ -1,21 +1,9 @@
-{ sources, pkgs, installShellFiles, darwin, stdenv, ... }:
-
-with pkgs;
-let
-  rustPlatform =
-    let rust = pkgs.latest.rustChannels.stable.rust;
-    in
-    pkgs.makeRustPlatform {
-      cargo = rust;
-      rustc = rust;
-    };
-  inherit (pkgs) lib;
-in
+{ sources, lib, installShellFiles, darwin, stdenv, rustPlatform, fetchFromGitHub, pkg-config, ... }:
 rustPlatform.buildRustPackage rec {
   pname = "bottom";
   version = "master";
   src =
-    pkgs.fetchFromGitHub { inherit (sources.bottom) owner repo rev sha256; };
+    fetchFromGitHub { inherit (sources.bottom) owner repo rev sha256; };
   cargoSha256 = "19mvjn6hzvx3mm2kiqamj68qfs87jz7mm9520rn5h31y2d63klal";
   nativeBuildInputs = [ installShellFiles ]
     ++ stdenv.lib.optionals stdenv.isLinux [ pkg-config ];
