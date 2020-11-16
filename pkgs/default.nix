@@ -3,7 +3,7 @@
   bottom = pkgs.callPackage ./bottom { inherit sources; };
   lfs = pkgs.callPackage ./lfs { inherit sources; };
   pueue = pkgs.callPackage ./pueue { inherit sources; };
-  themes = pkgs.libsForQt5.callPackage ./sddm-themes { inherit sources; };
+  sddmThemes = pkgs.libsForQt5.callPackage ./sddm-themes { inherit sources; };
   yubikey-touch-detector = pkgs.callPackage ./yubikey-touch-detector { inherit sources; };
   lua-language-server = pkgs.callPackage ./lua-language-server { inherit sources; };
   gping = pkgs.callPackage ./gping { inherit sources; };
