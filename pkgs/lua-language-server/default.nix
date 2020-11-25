@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
 
   src = fetchFromGitHub {
     inherit (sources.lua-language-server) owner repo rev;
-    sha256 = "1gj41k7z2rliivhfm9lrr7qxlfwrn0sawc6sxngrwkyvsl7p2rkl";
+    sha256 = "0dic7s4slhlwq97n30jlp5d7fj95aa63hvy95zcb5zf2z7j6b92w";
     fetchSubmodules = true;
   };
 
