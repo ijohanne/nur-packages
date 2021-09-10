@@ -7,6 +7,7 @@ pkgs.wrapFirefox unwrappedFirefox {
     DisablePocket = true;
     DisableTelemetry = true;
     DisableFirefoxAccounts = true;
+    DontCheckDefaultBrowser = true;
     FirefoxHome = {
       Pocket = false;
       Snippets = false;
@@ -34,5 +35,6 @@ pkgs.wrapFirefox unwrappedFirefox {
     lockPref("media.eme.enabled", true);
     lockPref("browser.eme.ui.enabled", true);
     lockPref("xpinstall.signatures.required",false);
+    lockPref("browser.shell.checkDefaultBrowser", false );
   '';
 }
