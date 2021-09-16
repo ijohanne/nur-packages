@@ -22,6 +22,7 @@ pkgs.mkShell rec {
     };
     excludes = [
       "pkgs/firefox-plugins/generated-addons.nix" # Generated
+      "pkgs/php-packages/phpactor" # Generated
       "overlay.nix"
       "ci.nix"
     ];

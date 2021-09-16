@@ -59,6 +59,18 @@
         "url": "https://github.com/datwaft/bubbly.nvim/archive/c0f8f2294fdc54ddca19acb99f6acac5aaf1b701.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "composer2nix": {
+        "branch": "master",
+        "description": "Generate Nix expressions to build PHP composer packages",
+        "homepage": null,
+        "owner": "svanderburg",
+        "repo": "composer2nix",
+        "rev": "9983c6fafb277f6b305edf232c2690d6d28ec092",
+        "sha256": "18v1sf2byshxdi2a818in9gpb2bbr2wx35ibwd937r93ylic7i93",
+        "type": "tarball",
+        "url": "https://github.com/svanderburg/composer2nix/archive/9983c6fafb277f6b305edf232c2690d6d28ec092.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "edge": {
         "branch": "master",
         "description": "Clean & Elegant Color Scheme inspired by Atom One and Material",
@@ -357,6 +369,18 @@
         "sha256": "1rr9ngjkj08anf8d33g53gzi0scsa5ryyqiz16xis1fad7mn44bb",
         "type": "tarball",
         "url": "https://github.com/oh-my-fish/plugin-ssh/archive/850ec718f23d4182c0fc751adc04e9318e451f21.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "phpactor": {
+        "branch": "master",
+        "description": "PHP completion, refactoring, introspection tool and language server.",
+        "homepage": "",
+        "owner": "phpactor",
+        "repo": "phpactor",
+        "rev": "1194ce124a358e115d8e88c9309367cd7acf62ba",
+        "sha256": "133q5msdscdxk02b12yrnwfz96yq4iqirrz1l44vchwz0rrkpsxa",
+        "type": "tarball",
+        "url": "https://github.com/phpactor/phpactor/archive/1194ce124a358e115d8e88c9309367cd7acf62ba.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pre-commit-hooks-nix": {

@@ -15,4 +15,5 @@
   firefox-hardened-wayland = pkgs.callPackage ./firefox-hardened { inherit pkgs; forceWayland = true; };
   hexokinase = pkgs.callPackage ./hexokinase { inherit pkgs sources; };
   nixpkgs-firefox-addons = pkgs.haskellPackages.callPackage ./firefox-addons-generator { inherit sources; };
+  php-packages = pkgs.recurseIntoAttrs (pkgs.callPackage ./php-packages { inherit pkgs sources; });
 }
