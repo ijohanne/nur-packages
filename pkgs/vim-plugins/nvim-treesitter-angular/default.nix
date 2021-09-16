@@ -1,5 +1,7 @@
 { pkgs, sources }:
 pkgs.vimUtils.buildVimPluginFrom2Nix {
+  name = "nvim-treesitter-angular-master";
+  version = "master";
   pname = "nvim-treesitter-angular";
   version = "master";
   src = pkgs.fetchFromGitHub {
