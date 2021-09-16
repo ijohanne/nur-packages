@@ -43,10 +43,10 @@
   };
   "enhancer-for-youtube" = buildFirefoxXpiAddon {
     pname = "enhancer-for-youtube";
-    version = "2.0.105";
+    version = "2.0.106";
     addonId = "enhancerforyoutube@maximerf.addons.mozilla.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3824758/enhancer_for_youtubetm-2.0.105-fx.xpi";
-    sha256 = "8944a1fad859450ce61b3c151e126ec871bf84a6d664baf6701c4244cd1d2246";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3839611/enhancer_for_youtubetm-2.0.106-fx.xpi";
+    sha256 = "9f8997bd296468b07ca1af3429452f7946b04e01bac842e36fc0114f1d8ad71d";
     meta = with lib;
       {
         homepage = "https://www.mrfdev.com/enhancer-for-youtube";
@@ -83,10 +83,10 @@
   };
   "lastpass-password-manager" = buildFirefoxXpiAddon {
     pname = "lastpass-password-manager";
-    version = "4.79.0.13";
+    version = "4.80.0.3";
     addonId = "support@lastpass.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3834091/lastpass_password_manager-4.79.0.13-an+fx.xpi";
-    sha256 = "aa600f36abe209aee8f6ecabe24ac2c5db9df398a886885522b80991c4123800";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3839710/lastpass_password_manager-4.80.0.3-an+fx.xpi";
+    sha256 = "84325efae90659b41883ba8938d56bee4e7044f66b01c70ec12173dfb06be900";
     meta = with lib;
       {
         homepage = "https://lastpass.com/";

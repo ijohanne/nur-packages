@@ -1,11 +1,11 @@
 { sources, pkgs, buildGoModule, fetchFromGitHub, ... }:
 buildGoModule rec {
   pname = "yubikey-touch-detector";
-  version = "1.9.0";
+  version = "1.9.1";
   src = fetchFromGitHub {
     inherit (sources.yubikey-touch-detector) owner repo rev sha256;
   };
-  vendorSha256 = "07adkp941qvph7x3q7cy8dnvigakc986m92v1vs0imxjcfh7cwij";
+  vendorSha256 = "1j8zj2flahwv1srzj5c3fvis27m2ki8vw1w6zmrg5a71q6m4kwz7";
   subPackages = [ "." ];
   runVend = true;
 
