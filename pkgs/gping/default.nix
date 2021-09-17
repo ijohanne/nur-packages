@@ -3,7 +3,7 @@ rustPlatform.buildRustPackage rec {
   pname = "gping";
   version = "master";
   src =
-    fetchFromGitHub { inherit (sources.gping) owner repo rev sha256; };
+    fetchFromGitHub { inherit (sources.gping-ijohanne) owner repo rev sha256; };
   cargoSha256 = "00xrkw3jhr8d76ar3vs1pnck6ras39hp71w3gfgxbwcg7fr27lab";
   nativeBuildInputs = [ installShellFiles ]
     ++ lib.optionals stdenv.isLinux [ pkg-config ];

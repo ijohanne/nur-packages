@@ -143,6 +143,18 @@
         "url": "https://github.com/orf/gping/archive/fdca3819d263c8419d9cceceeec5b7a67e23854a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "gping-ijohanne": {
+        "branch": "master",
+        "description": "Ping, but with a graph",
+        "homepage": null,
+        "owner": "ijohanne",
+        "repo": "gping",
+        "rev": "bugs/nixos-support",
+        "sha256": "0947l4pb6824465f6433a6k89jnbcdbncxwxpiik0k2z9ypm0yj5",
+        "type": "tarball",
+        "url": "https://github.com/ijohanne/gping/archive/bugs/nixos-support.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "hexokinase": {
         "branch": "master",
         "description": "Fast text scraper to find and convert colours (hex, rgb, rgb, hsl, web colours, custom patterns, etc.) into hex values",
