@@ -149,10 +149,10 @@
         "homepage": null,
         "owner": "ijohanne",
         "repo": "gping",
-        "rev": "fdca3819d263c8419d9cceceeec5b7a67e23854a",
-        "sha256": "01pkyssyvmim20lix3nlb4rxmd766kbia1icbl61jfwd15w5pwdj",
+        "rev": "bugs/nixos-support",
+        "sha256": "0947l4pb6824465f6433a6k89jnbcdbncxwxpiik0k2z9ypm0yj5",
         "type": "tarball",
-        "url": "https://github.com/ijohanne/gping/archive/fdca3819d263c8419d9cceceeec5b7a67e23854a.tar.gz",
+        "url": "https://github.com/ijohanne/gping/archive/bugs/nixos-support.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hexokinase": {
