@@ -167,6 +167,18 @@
         "url": "https://github.com/RRethy/hexokinase/archive/11fc3efc6752b580083ea7891db8216377571b6d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "hue_exporter": {
+        "branch": "main",
+        "description": "Philips Hue exporter for prometheus",
+        "homepage": "",
+        "owner": "ijohanne",
+        "repo": "hue_exporter",
+        "rev": "1babbed94ad61975ee488bd4cbbd15a61cc4ae45",
+        "sha256": "0783ig6hfdhwpbgs064q72g11kp20mkv97wfydl8w2s552wkxz3s",
+        "type": "tarball",
+        "url": "https://github.com/ijohanne/hue_exporter/archive/1babbed94ad61975ee488bd4cbbd15a61cc4ae45.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lfs": {
         "branch": "master",
         "description": "A thing to get information on your mounted disks",
@@ -213,6 +225,18 @@
         "sha256": "1ifa6iifyzsdnsagw8fz6mw991zcx6j3g8ar3y32dsnk51l9di0n",
         "type": "tarball",
         "url": "https://github.com/neovim/neovim/archive/685cf398130c61c158401b992a1893c2405cd7d2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nftables_exporter": {
+        "branch": "master",
+        "description": "Expose nftables rules number labeled by proto, table and chain",
+        "homepage": "",
+        "owner": "Intrinsec",
+        "repo": "nftables_exporter",
+        "rev": "3fc66b606fa60b35bc36d9fc27855e5f50beea8d",
+        "sha256": "0258qhv49m32sncs4mxxsf58rprxnr08xj6c2k1sfqq44l8m27ns",
+        "type": "tarball",
+        "url": "https://github.com/Intrinsec/nftables_exporter/archive/3fc66b606fa60b35bc36d9fc27855e5f50beea8d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -453,6 +477,30 @@
         "sha256": "1vb0gr9i4dj6bzrx73cacnn012crvpj4d1n3yiw5w2yhrbpjkql7",
         "type": "tarball",
         "url": "https://github.com/MarianArlt/sddm-sugar-dark/archive/9fc363cc3f6b3f70df948c88cbe26989386ee20d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "ts3exporter": {
+        "branch": "master",
+        "description": "Teamspeak 3 exporter for prometheus",
+        "homepage": null,
+        "owner": "hikhvar",
+        "repo": "ts3exporter",
+        "rev": "a38c91b397a67f3675af4985ecd2f8c0e5354a7c",
+        "sha256": "187sxyiglm728s113cb0kh8jldibwaw7mk6h2f97jpl2s9svccbi",
+        "type": "tarball",
+        "url": "https://github.com/hikhvar/ts3exporter/archive/a38c91b397a67f3675af4985ecd2f8c0e5354a7c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "unpoller": {
+        "branch": "master",
+        "description": "Application: Collect ALL UniFi Controller, Site, Device & Client Data - Export to InfluxDB or Prometheus",
+        "homepage": "https://unpoller.com",
+        "owner": "unpoller",
+        "repo": "unpoller",
+        "rev": "938e8d19aea3a8ff045517f9618c3e966ef18b93",
+        "sha256": "1w29636s8wczvrl42pzwr9h1lwkkamka95a3xflmp42crd03nmr8",
+        "type": "tarball",
+        "url": "https://github.com/unpoller/unpoller/archive/938e8d19aea3a8ff045517f9618c3e966ef18b93.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-hexokinase": {
