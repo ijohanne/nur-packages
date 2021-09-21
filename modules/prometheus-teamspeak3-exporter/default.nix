@@ -60,8 +60,8 @@ in
           '';
         };
         remotePassword = mkOption {
-          type = types.str;
-          default = "voided";
+          type = types.nullOr types.str;
+          default = null;
           description = ''
             Password to use when querying the server
           '';
@@ -72,6 +72,13 @@ in
     default = { };
   };
   config = mkIf cfg.enable {
+    assertions = [
+      {
+        assertion = cfg.remotePassword == null;
+        message = "${cfg}.remotePassword must be provided when this service is enabled";
+      }
+    ];
+
     users.users."${cfg.user}" = {
       description = "Prometheus ${name} exporter service user";
       isSystemUser = true;

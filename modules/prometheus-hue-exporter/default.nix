@@ -46,15 +46,15 @@ in
           '';
         };
         hueUrl = mkOption {
-          type = types.str;
-          default = "192.168.1.1";
+          type = types.nullOr types.str;
+          default = null;
           description = ''
             Default URL of the Hue bridge to monitor
           '';
         };
         hueApiKey = mkOption {
-          type = types.str;
-          default = "voided";
+          type = types.nullOr types.str;
+          default = null;
           description = ''
             Create a user as described in the docs at https://developers.meethue.com/develop/get-started-2
           '';
@@ -64,6 +64,17 @@ in
     };
   };
   config = mkIf cfg.enable {
+    assertions = [
+      {
+        assertion = cfg.hueUrl == null;
+        message = "${cfg}.hueUrl must be provided when this service is enabled";
+      }
+      {
+        assertion = cfg.hueApiKey == null;
+        message = "${cfg}.hueApiKey must be provided when this service is enabled";
+      }
+    ];
+
     users.users."${cfg.user}" = {
       description = "Prometheus ${name} exporter service user";
       isSystemUser = true;
