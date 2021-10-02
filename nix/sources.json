@@ -299,6 +299,30 @@
         "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/0510159186dd2ef46e5464484fbdf119393afa58.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-dap": {
+        "branch": "master",
+        "description": "Debug Adapter Protocol client implementation for Neovim (>= 0.5)",
+        "homepage": "",
+        "owner": "mfussenegger",
+        "repo": "nvim-dap",
+        "rev": "409fd0cfbaa39e52e02c06eeae5456cadb0b6748",
+        "sha256": "0ssdq3v3rqi4bn7fpn4anzaa5kjx0xf7zvrzm6wan16nix7y522a",
+        "type": "tarball",
+        "url": "https://github.com/mfussenegger/nvim-dap/archive/409fd0cfbaa39e52e02c06eeae5456cadb0b6748.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-dap-ui": {
+        "branch": "master",
+        "description": "A UI for nvim-dap",
+        "homepage": null,
+        "owner": "rcarriga",
+        "repo": "nvim-dap-ui",
+        "rev": "547635e7ba1dace13189386c98c3c7b064d585c4",
+        "sha256": "00i55cccg65r0zz58ap6if6wgrsm1n6r0clgf959sigmj8q9559h",
+        "type": "tarball",
+        "url": "https://github.com/rcarriga/nvim-dap-ui/archive/547635e7ba1dace13189386c98c3c7b064d585c4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-lspconfig": {
         "branch": "master",
         "description": "Quickstart configurations for the Nvim LSP client",
@@ -309,6 +333,30 @@
         "sha256": "01jgxf8bgra4sgh63zpb5xga9lyb3bvpqcdzjk3vp6gyks66fb6h",
         "type": "tarball",
         "url": "https://github.com/neovim/nvim-lspconfig/archive/aa0b9fd746d73a5ebbc72c732c645e96423d4504.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-luadev": {
+        "branch": "master",
+        "description": "REPL/debug console for nvim lua plugins",
+        "homepage": "",
+        "owner": "bfredl",
+        "repo": "nvim-luadev",
+        "rev": "f82a74b1538b5a27972bb17ddac47aad0cc3659c",
+        "sha256": "10q7f68p7vf7in2mhkg0fadnk9kvpisw9fyv576qkxabycgzd78c",
+        "type": "tarball",
+        "url": "https://github.com/bfredl/nvim-luadev/archive/f82a74b1538b5a27972bb17ddac47aad0cc3659c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-luapad": {
+        "branch": "master",
+        "description": "Interactive real time neovim scratchpad for embedded lua engine - type and watch!",
+        "homepage": "",
+        "owner": "rafcamlet",
+        "repo": "nvim-luapad",
+        "rev": "33a7237d4ca42b6692042adc15cf77f5231940cf",
+        "sha256": "0ylxfzi045wxlsak52jla6m0mrwr2b3bb0mam9w1ay9s9l24dppv",
+        "type": "tarball",
+        "url": "https://github.com/rafcamlet/nvim-luapad/archive/33a7237d4ca42b6692042adc15cf77f5231940cf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-tree-docs": {
@@ -419,6 +467,18 @@
         "url": "https://github.com/phpactor/phpactor/archive/1194ce124a358e115d8e88c9309367cd7acf62ba.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "plenary-nvim": {
+        "branch": "master",
+        "description": "plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.",
+        "homepage": null,
+        "owner": "nvim-lua",
+        "repo": "plenary.nvim",
+        "rev": "6bb0e09030a7c2af19bf288088ca815228de9429",
+        "sha256": "12c3xfqmhnk0k1x6jjh4hbhw0w3d42afsfpvg542nwly17hy3sfg",
+        "type": "tarball",
+        "url": "https://github.com/nvim-lua/plenary.nvim/archive/6bb0e09030a7c2af19bf288088ca815228de9429.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "pre-commit-hooks-nix": {
         "branch": "master",
         "description": "Seamless integration of https://pre-commit.com git hooks with Nix.",
@@ -453,6 +513,18 @@
         "sha256": "0i2d88yyfjv4gn3zn7jzv5pf94vzllvxmnmi3hdjddrhl2xppsza",
         "type": "tarball",
         "url": "https://github.com/francoiscabrol/ranger.vim/archive/91e82debdf566dfaf47df3aef0a5fd823cedf41c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "rust-tools-nvim": {
+        "branch": "master",
+        "description": "Tools for better development in rust using neovim's builtin lsp",
+        "homepage": "",
+        "owner": "simrat39",
+        "repo": "rust-tools.nvim",
+        "rev": "c2aacb9cd51907ec6cce65a683cb2df6ae78a227",
+        "sha256": "067hjyw7d2wf443bny3m3gjkq3avf3k99xwzkl1yrd4vn321h2kn",
+        "type": "tarball",
+        "url": "https://github.com/simrat39/rust-tools.nvim/archive/c2aacb9cd51907ec6cce65a683cb2df6ae78a227.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "sddm-chili": {

@@ -15,4 +15,10 @@
   vim-signify = import ./vim-signify { inherit pkgs sources; };
   edge = import ./edge { inherit pkgs sources; };
   vim-hexokinase = import ./vim-hexokinase { inherit pkgs sources; };
+  nvim-dap = import ./nvim-dap { inherit pkgs sources; };
+  rust-tools-nvim = import ./rust-tools-nvim { inherit pkgs sources; };
+  plenary-nvim = import ./plenary-nvim { inherit pkgs sources; };
+  nvim-luadev = import ./nvim-luadev { inherit pkgs sources; };
+  nvim-luapad = import ./nvim-luapad { inherit pkgs sources; };
+  nvim-dap-ui = import ./nvim-dap-ui { inherit pkgs sources; };
 }
