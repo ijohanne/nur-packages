@@ -299,6 +299,18 @@
         "url": "https://github.com/mozilla/nixpkgs-mozilla/archive/0510159186dd2ef46e5464484fbdf119393afa58.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "nvim-code-action-menu": {
+        "branch": "main",
+        "description": "Pop-up menu for code actions to show meta-information and diff preview",
+        "homepage": "",
+        "owner": "weilbith",
+        "repo": "nvim-code-action-menu",
+        "rev": "4efac33349a6d4669c2072a22ede61d94886c48d",
+        "sha256": "180c8mxyqrl70z2r235rlva8w3d83sypfdq087l74qg0jdcas2gj",
+        "type": "tarball",
+        "url": "https://github.com/weilbith/nvim-code-action-menu/archive/4efac33349a6d4669c2072a22ede61d94886c48d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nvim-dap": {
         "branch": "master",
         "description": "Debug Adapter Protocol client implementation for Neovim (>= 0.5)",
@@ -321,6 +333,18 @@
         "sha256": "00i55cccg65r0zz58ap6if6wgrsm1n6r0clgf959sigmj8q9559h",
         "type": "tarball",
         "url": "https://github.com/rcarriga/nvim-dap-ui/archive/547635e7ba1dace13189386c98c3c7b064d585c4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-lightbulb": {
+        "branch": "master",
+        "description": "VSCode 💡 for neovim's built-in LSP.",
+        "homepage": null,
+        "owner": "kosayoda",
+        "repo": "nvim-lightbulb",
+        "rev": "5b265fe19a3a60b6429b34c8cfdb0284ce52de33",
+        "sha256": "0m2kq0rs0rkif8d8783dbd9dwahzih67zfz3wi58r5lsm4fnai9h",
+        "type": "tarball",
+        "url": "https://github.com/kosayoda/nvim-lightbulb/archive/5b265fe19a3a60b6429b34c8cfdb0284ce52de33.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-lspconfig": {

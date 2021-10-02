@@ -21,4 +21,6 @@
   nvim-luadev = import ./nvim-luadev { inherit pkgs sources; };
   nvim-luapad = import ./nvim-luapad { inherit pkgs sources; };
   nvim-dap-ui = import ./nvim-dap-ui { inherit pkgs sources; };
+  nvim-lightbulb = import ./nvim-lightbulb { inherit pkgs sources; };
+  nvim-code-action-menu = import ./nvim-code-action-menu { inherit pkgs sources; };
 }
