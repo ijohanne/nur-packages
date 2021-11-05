@@ -2,10 +2,10 @@
 {
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "1.52.1";
+    version = "1.54.0";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3831245/bitwarden_free_password_manager-1.52.1-an+fx.xpi";
-    sha256 = "95d6ed5d3b4dabc8291d1a0a337dbc6cfe21920a23ab4a5e1fe3b014169e4bba";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3859577/bitwarden_free_password_manager-1.54.0-an+fx.xpi";
+    sha256 = "232b50247ea309b98c0c022fea9d8ca5ef227eb539bf27c58c2fd83d8270d9d7";
     meta = with lib;
       {
         homepage = "https://bitwarden.com";
@@ -29,10 +29,10 @@
   };
   "darkreader" = buildFirefoxXpiAddon {
     pname = "darkreader";
-    version = "4.9.35";
+    version = "4.9.41";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3842086/dark_reader-4.9.35-an+fx.xpi";
-    sha256 = "27eac6f94259e04053b24bfc1a3d7e7a45fba1ed63ca6d607c49655f59fb5a73";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3863766/dark_reader-4.9.41-an+fx.xpi";
+    sha256 = "3d6572bf9cc115cc590de299139dc9a9265449ae85a952faba6a52753a46fe32";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -83,10 +83,10 @@
   };
   "lastpass-password-manager" = buildFirefoxXpiAddon {
     pname = "lastpass-password-manager";
-    version = "4.80.0.3";
+    version = "4.81.0.3";
     addonId = "support@lastpass.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3839710/lastpass_password_manager-4.80.0.3-an+fx.xpi";
-    sha256 = "84325efae90659b41883ba8938d56bee4e7044f66b01c70ec12173dfb06be900";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3844191/lastpass_password_manager-4.81.0.3-an+fx.xpi";
+    sha256 = "4c248739c7f134c282d1a3eb88f46ad6cc1bfb6f5d1bd677a1550aedc1f854fc";
     meta = with lib;
       {
         homepage = "https://lastpass.com/";
@@ -110,10 +110,10 @@
   };
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.37.2";
+    version = "1.38.6";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3816867/ublock_origin-1.37.2-an+fx.xpi";
-    sha256 = "b3a3c81891acb4620e33dd548b50375aad826376044a6143b5a947d0406a559e";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3853583/ublock_origin-1.38.6-an+fx.xpi";
+    sha256 = "d095ce1d57e5b46d1de55f6f57d239630ec6259434449f45d7163d69f5c0cc85";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
