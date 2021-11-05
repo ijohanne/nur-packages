@@ -24,6 +24,8 @@ jobs:
       uses: cachix/install-nix-action@v14
       with:
         nix_path: "${{ matrix.nixPath }}"
+        extra_nix_config: |
+          experimental-features = nix-command flakes
     - name: Show nixpkgs version
       run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
     - name: Setup cachix
@@ -33,7 +35,7 @@ jobs:
         name: ${{ matrix.cachixName }}
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
     - name: Build nix packages
-      run: nix run -I 'nixpkgs=channel:nixos-unstable' nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs
+      run: nix run 'nixpkgs#nix-build-uncached' -- ci.nix -A cacheOutputs
     - name: Trigger NUR update
       if: ${{ matrix.nurRepo != '<YOUR_REPO_NAME>' }}
       run: curl -XPOST "https://nur-update.herokuapp.com/update?repo=${{ matrix.nurRepo }}"
