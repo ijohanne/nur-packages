@@ -64,17 +64,6 @@ in
     };
   };
   config = mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = cfg.hueUrl == null;
-        message = "${cfg}.hueUrl must be provided when this service is enabled";
-      }
-      {
-        assertion = cfg.hueApiKey == null;
-        message = "${cfg}.hueApiKey must be provided when this service is enabled";
-      }
-    ];
-
     users.users."${cfg.user}" = {
       description = "Prometheus ${name} exporter service user";
       isSystemUser = true;

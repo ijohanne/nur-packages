@@ -72,13 +72,6 @@ in
     default = { };
   };
   config = mkIf cfg.enable {
-    assertions = [
-      {
-        assertion = cfg.remotePassword == null;
-        message = "${cfg}.remotePassword must be provided when this service is enabled";
-      }
-    ];
-
     users.users."${cfg.user}" = {
       description = "Prometheus ${name} exporter service user";
       isSystemUser = true;
