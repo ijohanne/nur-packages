@@ -11,7 +11,7 @@ in
   version = "master";
   src = fetchFromGitHub { inherit (sources.pueue) owner repo rev sha256; };
 
-  cargoSha256 = "1iqzm3gn11kaza3ph2iy74y6plxs63qj4gal852y25mwsvizk6hr";
+  cargoSha256 = "01cdzbxn3895rjssg2xi7b4qaxrwxl8k64mci89c6hyagb2kypp9";
 
   nativeBuildInputs = [ installShellFiles ];
 
