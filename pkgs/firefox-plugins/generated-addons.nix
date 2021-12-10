@@ -29,10 +29,10 @@
   };
   "darkreader" = buildFirefoxXpiAddon {
     pname = "darkreader";
-    version = "4.9.42";
+    version = "4.9.43";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3864423/dark_reader-4.9.42-an+fx.xpi";
-    sha256 = "592885b9a7b568d055207eb52bef3e13aa75c1015a98a19b4e6ecd79c2725403";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3878116/dark_reader-4.9.43-an+fx.xpi";
+    sha256 = "390bdc2609b43627b58e47bb3a3c2f42b156f16bd932b93746196615134db0b1";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -43,10 +43,10 @@
   };
   "enhancer-for-youtube" = buildFirefoxXpiAddon {
     pname = "enhancer-for-youtube";
-    version = "2.0.108";
+    version = "2.0.109";
     addonId = "enhancerforyoutube@maximerf.addons.mozilla.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3865222/enhancer_for_youtubetm-2.0.108-fx.xpi";
-    sha256 = "e2c1ee5298aa384472a25ab58ad99d8013d0377434872e3d12cad7fc9d0f49bd";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3877412/enhancer_for_youtubetm-2.0.109-fx.xpi";
+    sha256 = "019cbe91348acd3a0003d812139e4b78c511c14052b731008a55bedcba07c1e3";
     meta = with lib;
       {
         homepage = "https://www.mrfdev.com/enhancer-for-youtube";
