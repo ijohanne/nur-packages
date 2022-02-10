@@ -203,6 +203,18 @@
         "url": "https://github.com/sumneko/lua-language-server/archive/247377652b61fd21f0a16ff8fd15bc8c54e3e080.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "mjpg-streamer": {
+        "branch": "master",
+        "description": "Fork of http://sourceforge.net/projects/mjpg-streamer/",
+        "homepage": null,
+        "owner": "jacksonliam",
+        "repo": "mjpg-streamer",
+        "rev": "310b29f4a94c46652b20c4b7b6e5cf24e532af39",
+        "sha256": "0y6xqx4pbdsiis6pqms9b91sba6ah414flrmlhrsmq9058nil755",
+        "type": "tarball",
+        "url": "https://github.com/jacksonliam/mjpg-streamer/archive/310b29f4a94c46652b20c4b7b6e5cf24e532af39.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "neovim": {
         "branch": "master",
         "description": "Vim-fork focused on extensibility and usability",
