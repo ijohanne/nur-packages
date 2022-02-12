@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 with lib;
 let
-  cfg = config.services.mjpg-streamer;
+  cfg = config.services.mjpg-streamer-experimental;
 in
 {
-  options.services.mjpg-streamer = with types; mkOption {
+  options.services.mjpg-streamer-experimental = with types; mkOption {
     type = types.submodule {
       options = {
         enable = mkEnableOption "mjpg-streamer";
@@ -64,7 +64,7 @@ in
     };
     users.groups."${cfg.group}" = { };
 
-    systemd.services."mjpg-streamer" = {
+    systemd.services."mjpg-streamer-experimental" = {
       environment = { };
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
@@ -75,7 +75,7 @@ in
       serviceConfig.User = "${cfg.user}";
       serviceConfig.Group = "${cfg.group}";
       serviceConfig.ExecStart = ''
-        ${getBin pkgs.mjpg-streamer}/bin/mjpg_streamer \
+        ${getBin pkgs.mjpg-streamer-experimental}/bin/mjpg_streamer \
           -o "output_${cfg.output}.so ${cfg.outputArgs}" \
           -i "input_${cfg.input}.so ${cfg.inputArgs}"
       '';

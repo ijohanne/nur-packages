@@ -1,6 +1,6 @@
 { pkgs, sources, fetchFromGitHub }:
 pkgs.stdenv.mkDerivation rec {
-  pname = "mjpg-streamer";
+  pname = "mjpg-streamer-experimental";
   version = "master";
   src = fetchFromGitHub { inherit (sources.mjpg-streamer) owner repo rev sha256; };
   buildInputs = with pkgs; [ cmake makeWrapper ];
