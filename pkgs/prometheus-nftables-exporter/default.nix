@@ -4,4 +4,5 @@ pkgs.buildGoModule rec {
   src = sources.nftables_exporter;
   vendorSha256 = null;
   checkFlags = [ "-short" ];
+  doCheck = false;
 }
