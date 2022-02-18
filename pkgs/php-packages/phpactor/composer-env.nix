@@ -24,7 +24,7 @@ let
     , devPackages ? { }
     , buildInputs ? [ ]
     , symlinkDependencies ? false
-    , executable ? false
+    , executable ? true
     , removeComposerArtifacts ? false
     , postInstall ? ""
     , noDev ? false
@@ -178,7 +178,6 @@ let
 
         # Reconstruct the installed.json file from the lock file
         ${pkgs.patch}/bin/patch -p0 < ${./patches/composer-json.patch}
-
         mkdir -p vendor/composer
         ${php}/bin/php ${reconstructInstalled} composer.lock > vendor/composer/installed.json
 

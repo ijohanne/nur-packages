@@ -5,9 +5,9 @@ buildGoModule rec {
   src = fetchFromGitHub {
     inherit (sources.yubikey-touch-detector) owner repo rev sha256;
   };
-  vendorSha256 = "0y7rn17vypga8q6ba7vkvmadpxqa8jyl2ph0grg7c541l1g42gii";
+  vendorSha256 = "sha256-Vco3ldjpnehZ7JQtWrvKU/Me5LhdGVW1LxvvbueXJw8=";
   subPackages = [ "." ];
-  runVend = true;
+  proxyVendor = true;
 
   nativeBuildInputs = with pkgs; [ pkg-config ];
   buildInputs = with pkgs; [ libnotify ];

@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
 
   src = fetchFromGitHub {
     inherit (sources.lua-language-server) owner repo rev;
-    sha256 = "sha256-77C1B+GW3WamoAe+5BTgO8k8jtX70fF0xZnq3f86tek=";
+    sha256 = "sha256-w8LZuNWb9As1esyjWbYG6OYfSIKOYSCxXHGZXzSYfB8=";
     fetchSubmodules = true;
   };
 
@@ -31,7 +31,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/bin
-    cp bin/Linux/lua-language-server $out/bin
+    cp bin/lua-language-server $out/bin
   '';
 
   nativeBuildInputs = [

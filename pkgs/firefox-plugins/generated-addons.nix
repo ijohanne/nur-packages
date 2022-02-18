@@ -2,10 +2,10 @@
 {
   "bitwarden-password-manager" = buildFirefoxXpiAddon {
     pname = "bitwarden-password-manager";
-    version = "1.54.0";
+    version = "1.55.0";
     addonId = "{446900e4-71c2-419f-a6a7-df9c091e268b}";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3859577/bitwarden_free_password_manager-1.54.0-an+fx.xpi";
-    sha256 = "232b50247ea309b98c0c022fea9d8ca5ef227eb539bf27c58c2fd83d8270d9d7";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3878893/bitwarden_free_password_manager-1.55.0-an+fx.xpi";
+    sha256 = "0236326c4d03c69e347a0264f5219ca3f1ae69de43d48173cd53e006da3933dd";
     meta = with lib;
       {
         homepage = "https://bitwarden.com";
@@ -29,10 +29,10 @@
   };
   "darkreader" = buildFirefoxXpiAddon {
     pname = "darkreader";
-    version = "4.9.43";
+    version = "4.9.45";
     addonId = "addon@darkreader.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3878116/dark_reader-4.9.43-an+fx.xpi";
-    sha256 = "390bdc2609b43627b58e47bb3a3c2f42b156f16bd932b93746196615134db0b1";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3904618/dark_reader-4.9.45-an+fx.xpi";
+    sha256 = "7df6f5a6c07d3740ed26be3c24fdd1719b77e685506e2642f756ce3538b3cc7f";
     meta = with lib;
       {
         homepage = "https://darkreader.org/";
@@ -43,10 +43,10 @@
   };
   "enhancer-for-youtube" = buildFirefoxXpiAddon {
     pname = "enhancer-for-youtube";
-    version = "2.0.109";
+    version = "2.0.112";
     addonId = "enhancerforyoutube@maximerf.addons.mozilla.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3877412/enhancer_for_youtubetm-2.0.109-fx.xpi";
-    sha256 = "019cbe91348acd3a0003d812139e4b78c511c14052b731008a55bedcba07c1e3";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3895515/enhancer_for_youtubetm-2.0.112-fx.xpi";
+    sha256 = "6af56fe0bcb827750930557fda1fcc8647793da3ec75f4b95608b20e1a706707";
     meta = with lib;
       {
         homepage = "https://www.mrfdev.com/enhancer-for-youtube";
@@ -83,10 +83,10 @@
   };
   "lastpass-password-manager" = buildFirefoxXpiAddon {
     pname = "lastpass-password-manager";
-    version = "4.85.1.3";
+    version = "4.88.0.1";
     addonId = "support@lastpass.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3872176/lastpass_password_manager-4.85.1.3-an+fx.xpi";
-    sha256 = "6e160766e25cb10cc787a5bf4c661b7bf97be0bdd4dd83174464b312cb6e423a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3900294/lastpass_password_manager-4.88.0.1-an+fx.xpi";
+    sha256 = "6b0468d28fa25ae0759a5b7b03914d7ab2fcf4ec55d83ba6d968f90610f372ce";
     meta = with lib;
       {
         homepage = "https://lastpass.com/";
@@ -96,10 +96,10 @@
   };
   "reddit-enhancement-suite" = buildFirefoxXpiAddon {
     pname = "reddit-enhancement-suite";
-    version = "5.22.5";
+    version = "5.22.10";
     addonId = "jid1-xUfzOsOFlzSOXg@jetpack";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3784229/reddit_enhancement_suite-5.22.5-an+fx.xpi";
-    sha256 = "213f1ada92bb9d2814e6760cf20a2dc3cf2cc31b503e2baa8fe2f784be6df11c";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3902655/reddit_enhancement_suite-5.22.10-an+fx.xpi";
+    sha256 = "749ecad7db8a9411ab72ea7f5f40b468a084128f2e6ba9446fc1745a2b734045";
     meta = with lib;
       {
         homepage = "https://redditenhancementsuite.com/";
@@ -110,10 +110,10 @@
   };
   "ublock-origin" = buildFirefoxXpiAddon {
     pname = "ublock-origin";
-    version = "1.39.2";
+    version = "1.41.4";
     addonId = "uBlock0@raymondhill.net";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3875359/ublock_origin-1.39.2-an+fx.xpi";
-    sha256 = "02e139624549b733542b95c4c75b6b315a09cce91373c263ba2f18ca5ed8d93a";
+    url = "https://addons.mozilla.org/firefox/downloads/file/3910015/ublock_origin-1.41.4-an+fx.xpi";
+    sha256 = "6de88b49221291b163dfd93743c9171c1feb6459d32144f092de4b4a4e89a1f2";
     meta = with lib;
       {
         homepage = "https://github.com/gorhill/uBlock#ublock-origin";
