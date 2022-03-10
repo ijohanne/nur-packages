@@ -605,10 +605,10 @@
         "homepage": "https://unpoller.com",
         "owner": "unpoller",
         "repo": "unpoller",
-        "rev": "fa10ecf17696279f61cb79f724cb8ec7c3d8351d",
-        "sha256": "0wbcn02syjxsvs3f2gdw19nc3ji8igrqzjcj55y69p7r64343srh",
+        "rev": "938e8d19aea3a8ff045517f9618c3e966ef18b93",
+        "sha256": "1w29636s8wczvrl42pzwr9h1lwkkamka95a3xflmp42crd03nmr8",
         "type": "tarball",
-        "url": "https://github.com/unpoller/unpoller/archive/fa10ecf17696279f61cb79f724cb8ec7c3d8351d.tar.gz",
+        "url": "https://github.com/unpoller/unpoller/archive/938e8d19aea3a8ff045517f9618c3e966ef18b93.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-hexokinase": {
