@@ -227,6 +227,18 @@
         "url": "https://github.com/neovim/neovim/archive/ac480ef6b4ad4b4185cdc1f163288f46cef71352.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "netatmo-exporter": {
+        "branch": "master",
+        "description": "Prometheus exporter for Netatmo sensor data.",
+        "homepage": "",
+        "owner": "xperimental",
+        "repo": "netatmo-exporter",
+        "rev": "1507b2b33d177f5850573d99fc7f0698d26d0ff4",
+        "sha256": "1xf0i24aca25bfnhf91ssnbv9ra05dzy8jsbm9kf95lfa8qfjlhj",
+        "type": "tarball",
+        "url": "https://github.com/xperimental/netatmo-exporter/archive/1507b2b33d177f5850573d99fc7f0698d26d0ff4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "nftables_exporter": {
         "branch": "master",
         "description": "Expose nftables rules number labeled by proto, table and chain",

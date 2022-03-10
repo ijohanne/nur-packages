@@ -20,5 +20,6 @@
   prometheus-hue-exporter = pkgs.callPackage ./prometheus-hue-exporter { inherit pkgs sources; };
   prometheus-nftables-exporter = pkgs.callPackage ./prometheus-nftables-exporter { inherit pkgs sources; };
   prometheus-unpoller-exporter = pkgs.callPackage ./prometheus-unpoller-exporter { inherit pkgs sources; };
+  prometheus-netatmo-exporter = pkgs.callPackage ./prometheus-netatmo-exporter { inherit pkgs sources; };
   mjpg-streamer-experimental = pkgs.callPackage ./mjpg-streamer-experimental { inherit pkgs sources; };
 }
