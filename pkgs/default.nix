@@ -21,5 +21,6 @@
   prometheus-nftables-exporter = pkgs.callPackage ./prometheus-nftables-exporter { inherit pkgs sources; };
   prometheus-unpoller-exporter = pkgs.callPackage ./prometheus-unpoller-exporter { inherit pkgs sources; };
   prometheus-netatmo-exporter = pkgs.callPackage ./prometheus-netatmo-exporter { inherit pkgs sources; };
+  prometheus-tplink-p110-exporter = pkgs.callPackage ./prometheus-tplink-p110-exporter { inherit pkgs sources; };
   mjpg-streamer-experimental = pkgs.callPackage ./mjpg-streamer-experimental { inherit pkgs sources; };
 }
