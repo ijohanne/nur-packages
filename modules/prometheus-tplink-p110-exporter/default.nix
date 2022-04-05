@@ -12,7 +12,7 @@ in
         enableLocalScraping = mkEnableOption "enable scraping by local prometheus";
         port = mkOption {
           type = types.port;
-          default = 9984;
+          default = 9981;
           description = ''
             Port to listen on.
           '';
