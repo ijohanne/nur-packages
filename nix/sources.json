@@ -533,10 +533,10 @@
         "homepage": null,
         "owner": "ijohanne",
         "repo": "prometheus-tplink-p110-exporter",
-        "rev": "e8f5bab25fef469a0137d602737810335370e163",
-        "sha256": "00r6ri2y08rjygwkycmc1216gkc0bfpnci04nhjlgkfk8gcvnzm5",
+        "rev": "1434e6f4b8873fa06f8d98be939571210b07056d",
+        "sha256": "1v709z8f2dlqjp685qn8f1sig8lmfc7f94xqkrckm3cqwwgxs6i8",
         "type": "tarball",
-        "url": "https://github.com/ijohanne/prometheus-tplink-p110-exporter/archive/e8f5bab25fef469a0137d602737810335370e163.tar.gz",
+        "url": "https://github.com/ijohanne/prometheus-tplink-p110-exporter/archive/1434e6f4b8873fa06f8d98be939571210b07056d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pueue": {
