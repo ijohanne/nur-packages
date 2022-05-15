@@ -92,6 +92,12 @@ in
               report_errors = false;
               buffer = 50;
             };
+            datadog = {
+              disable = true;
+            };
+            influxdb = {
+              disable = true;
+            };
             "unifi.defaults" = {
               url = "${cfg.unifiUrl}";
               user = "${cfg.unifiUsername}";
@@ -103,9 +109,6 @@ in
               save_dpi = false;
               save_rogue = true;
               verify_ssl = false;
-            };
-            influxdb = {
-              disable = true;
             };
           };
           type = with types; submodule {
