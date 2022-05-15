@@ -6,4 +6,5 @@ rec {
   prometheus-netatmo-exporter = ./prometheus-netatmo-exporter;
   prometheus-tplink-p110-exporter = ./prometheus-tplink-p110-exporter;
   mjpg-streamer-experimental = ./mjpg-streamer-experimental;
+  multicast-relay = ./multicast-relay;
 }

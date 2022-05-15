@@ -215,6 +215,18 @@
         "url": "https://github.com/jacksonliam/mjpg-streamer/archive/310b29f4a94c46652b20c4b7b6e5cf24e532af39.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "multicast-relay": {
+        "branch": "master",
+        "description": "Relay multicast and broadcast packets between interfaces.",
+        "homepage": "",
+        "owner": "alsmith",
+        "repo": "multicast-relay",
+        "rev": "2c0e4c743127066388de2c5fd6a7eed676d9b523",
+        "sha256": "0gh0w0shdqisgcg847a30va0riy572xjy3kk4yrx0svwqr6xy6nc",
+        "type": "tarball",
+        "url": "https://github.com/alsmith/multicast-relay/archive/2c0e4c743127066388de2c5fd6a7eed676d9b523.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "neovim": {
         "branch": "master",
         "description": "Vim-fork focused on extensibility and usability",
