@@ -167,6 +167,18 @@
         "url": "https://github.com/ijohanne/hue_exporter/archive/1babbed94ad61975ee488bd4cbbd15a61cc4ae45.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "ipmi_exporter": {
+        "branch": "master",
+        "description": "Remote IPMI exporter for Prometheus",
+        "homepage": "",
+        "owner": "prometheus-community",
+        "repo": "ipmi_exporter",
+        "rev": "5f7c5fe87d352b55e7dbde68bd84f071ca86b544",
+        "sha256": "07v71j2d41snfynrin0pjmv0nakg804fiyvkx7cn90mq2g5m7vpi",
+        "type": "tarball",
+        "url": "https://github.com/prometheus-community/ipmi_exporter/archive/5f7c5fe87d352b55e7dbde68bd84f071ca86b544.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "lfs": {
         "branch": "master",
         "description": "A thing to get information on your mounted disks",
