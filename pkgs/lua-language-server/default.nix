@@ -1,6 +1,6 @@
 { stdenv
 , fetchFromGitHub
-, pkgconfig
+, pkg-config
 , makeWrapper
 , lua52Packages
 , ncurses
@@ -35,7 +35,7 @@ stdenv.mkDerivation rec {
   '';
 
   nativeBuildInputs = [
-    pkgconfig
+    pkg-config
     makeWrapper
     ninja
   ];
