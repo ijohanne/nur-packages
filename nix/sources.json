@@ -245,10 +245,10 @@
         "homepage": "https://neovim.io",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "dc9e436986bec15b027c2a8d78782f514c046a8b",
-        "sha256": "0i3ykd19q2ccdq3ja0vjhcn6hs4arivi81n28kg2ppim4lhdkr8y",
+        "rev": "2bce99b978fc8d39767eb2704062bd9f4a412438",
+        "sha256": "04j3dr5s0in4ybs1q42cavhx8vdpam26ybx5l9gyr16xnkmfsjc3",
         "type": "tarball",
-        "url": "https://github.com/neovim/neovim/archive/dc9e436986bec15b027c2a8d78782f514c046a8b.tar.gz",
+        "url": "https://github.com/neovim/neovim/archive/2bce99b978fc8d39767eb2704062bd9f4a412438.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "netatmo-exporter": {
