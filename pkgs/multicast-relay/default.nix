@@ -3,7 +3,7 @@ with pkgs;
 stdenv.mkDerivation {
   name = "multicast-relay";
   buildInputs = [
-    (pkgs.python.withPackages (pythonPackages: with pythonPackages; [
+    (python3.withPackages (ps: with ps; [
       netifaces
     ]))
   ];
