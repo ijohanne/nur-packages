@@ -2,7 +2,7 @@
 pkgs.buildGoModule rec {
   name = "prometheus-nftables-exporter";
   src = sources.nftables_exporter;
-  vendorSha256 = null;
+  vendorHash = null;
   checkFlags = [ "-short" ];
   doCheck = false;
 }

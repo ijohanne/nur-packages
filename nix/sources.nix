@@ -1,22 +1,31 @@
-# A record, from name to path, of the third-party packages
-with {
-  versions = builtins.fromJSON (builtins.readFile ./sources.json);
+# Resolve flake inputs from flake.lock for non-flake usage (e.g. NUR evaluator, ci.nix).
+# Only resolves non-flake inputs (flake = false); real flake inputs are handled separately.
+# In flake context, sources are passed from flake inputs directly.
+let
+  lock = builtins.fromJSON (builtins.readFile ../flake.lock);
+  root = lock.nodes.${lock.root};
 
-  # fetchTarball version that is compatible between all the versions of Nix
-  fetchTarball = { url, sha256 }:
-    if builtins.lessThan builtins.nixVersion "1.12" then
-      builtins.fetchTarball { inherit url; }
-    else
-      builtins.fetchTarball { inherit url sha256; };
-};
+  fetchInput = name:
+    let
+      inputRef = root.inputs.${name};
+      nodeName = if builtins.isList inputRef then builtins.head inputRef else inputRef;
+      node = lock.nodes.${nodeName};
+      locked = node.locked;
+    in
+    builtins.fetchTarball {
+      url = "https://github.com/${locked.owner}/${locked.repo}/archive/${locked.rev}.tar.gz";
+      sha256 = locked.narHash;
+    };
 
-# NOTE: spec must _not_ have an "outPath" attribute
-builtins.mapAttrs
-  (_: spec:
-    if builtins.hasAttr "outPath" spec then
-      abort "The values in versions.json should not have an 'outPath' attribute"
-    else if builtins.hasAttr "url" spec && builtins.hasAttr "sha256" spec then
-      spec // { outPath = fetchTarball { inherit (spec) url sha256; }; }
-    else
-      spec)
-  versions
+  isNonFlakeInput = name:
+    let
+      inputRef = root.inputs.${name};
+      nodeName = if builtins.isList inputRef then builtins.head inputRef else inputRef;
+      node = lock.nodes.${nodeName};
+    in
+    node ? flake && node.flake == false;
+
+  sourceNames = builtins.filter isNonFlakeInput
+    (builtins.attrNames (builtins.removeAttrs root.inputs [ "nixpkgs" ]));
+in
+builtins.listToAttrs (map (name: { inherit name; value = fetchInput name; }) sourceNames)

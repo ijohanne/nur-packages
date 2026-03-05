@@ -2,7 +2,8 @@
 pkgs.buildGoModule rec {
   name = "prometheus-hue-exporter";
   src = sources.hue_exporter;
-  vendorSha256 = "1k67fxaf831pydjfbmhawdm4kpyallqjg5mprf57hfwr8cqrba2g";
+  vendorHash = "sha256-xPAXqFe2DdN4v+Bmg6Q1Qa/os3X0J/gsIjIOPkiTBfY=";
+  proxyVendor = true;
   checkFlags = [ "-short" ];
   installPhase = ''
     runHook preInstall

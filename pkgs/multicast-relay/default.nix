@@ -1,4 +1,4 @@
-{ sources, pkgs, stdenv, fetchFromGitHub, ... }:
+{ sources, pkgs, stdenv, ... }:
 with pkgs;
 stdenv.mkDerivation {
   name = "multicast-relay";
@@ -7,9 +7,7 @@ stdenv.mkDerivation {
       netifaces
     ]))
   ];
-  src = fetchFromGitHub {
-    inherit (sources.multicast-relay) owner repo rev sha256;
-  };
+  src = sources.multicast-relay;
   installPhase = ''
     mkdir -p $out/bin
     cp multicast-relay.py $out/bin/multicast-relay

@@ -68,32 +68,6 @@
         platforms = platforms.all;
       };
   };
-  "https-everywhere" = buildFirefoxXpiAddon {
-    pname = "https-everywhere";
-    version = "2021.7.13";
-    addonId = "https-everywhere@eff.org";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3809748/https_everywhere-2021.7.13-an+fx.xpi";
-    sha256 = "e261461b5d4d3621285fce70773558184d691c614b330744dab672f032db731c";
-    meta = with lib;
-      {
-        homepage = "https://www.eff.org/https-everywhere";
-        description = "Encrypt the web! HTTPS Everywhere is a Firefox extension to protect your communications by enabling HTTPS encryption automatically on sites that are known to support it, even when you type URLs or follow links that omit the https: prefix.";
-        platforms = platforms.all;
-      };
-  };
-  "lastpass-password-manager" = buildFirefoxXpiAddon {
-    pname = "lastpass-password-manager";
-    version = "4.92.0.1";
-    addonId = "support@lastpass.com";
-    url = "https://addons.mozilla.org/firefox/downloads/file/3930096/lastpass_password_manager-4.92.0.1-an+fx.xpi";
-    sha256 = "1264f395b0909db49926c43f9598d435d8d736b06256c5fbceebe3a7f92ca003";
-    meta = with lib;
-      {
-        homepage = "https://lastpass.com/";
-        description = "LastPass, an award-winning password manager, saves your passwords and gives you secure access from every computer and mobile device.";
-        platforms = platforms.all;
-      };
-  };
   "reddit-enhancement-suite" = buildFirefoxXpiAddon {
     pname = "reddit-enhancement-suite";
     version = "5.22.10";
