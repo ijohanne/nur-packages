@@ -85,20 +85,20 @@
         "type": "github"
       }
     },
-    "nftables_exporter": {
+    "nftables-exporter": {
       "flake": false,
       "locked": {
-        "lastModified": 1629989644,
-        "narHash": "sha256-2h5RESUEY6fDFMzIjkC2Pd+MitO9V6KZ1WLURDbEqAg=",
-        "owner": "Intrinsec",
-        "repo": "nftables_exporter",
-        "rev": "3fc66b606fa60b35bc36d9fc27855e5f50beea8d",
+        "lastModified": 1757426872,
+        "narHash": "sha256-t0fC7Gso8+k3jLP3YbpZk2rCQgTXfJ/S/SFr2+Kiz7k=",
+        "owner": "metal-stack",
+        "repo": "nftables-exporter",
+        "rev": "a138821e84fe45927c1e572cb070123c63bfceab",
         "type": "github"
       },
       "original": {
-        "owner": "Intrinsec",
-        "repo": "nftables_exporter",
-        "rev": "3fc66b606fa60b35bc36d9fc27855e5f50beea8d",
+        "owner": "metal-stack",
+        "ref": "v0.4.3",
+        "repo": "nftables-exporter",
         "type": "github"
       }
     },
@@ -228,7 +228,7 @@
         "hue_exporter": "hue_exporter",
         "multicast-relay": "multicast-relay",
         "netatmo-exporter": "netatmo-exporter",
-        "nftables_exporter": "nftables_exporter",
+        "nftables-exporter": "nftables-exporter",
         "nixpkgs": "nixpkgs",
         "nixpkgs-firefox-addons": "nixpkgs-firefox-addons",
         "nvim-tree-docs": "nvim-tree-docs",
