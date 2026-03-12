@@ -1,8 +1,10 @@
+self:
 { config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.services.prometheus-nftables-exporter;
   name = "nftables";
+  package = self.legacyPackages.${pkgs.system}.prometheus-nftables-exporter;
 in
 {
   options.services.prometheus-nftables-exporter = with types; mkOption {
@@ -58,20 +60,21 @@ in
     users.groups."${cfg.group}" = { };
 
     systemd.services."prometheus-${name}-exporter" = {
-      environment = { };
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
-      serviceConfig.Restart = "always";
-      serviceConfig.PrivateTmp = true;
-      serviceConfig.WorkingDirectory = /tmp;
-      serviceConfig.DynamicUser = false;
-      serviceConfig.User = "${cfg.user}";
-      serviceConfig.Group = "${cfg.group}";
-      serviceConfig.AmbientCapabilities = [ "CAP_NET_ADMIN" "CAP_SYS_ADMIN" ];
-      serviceConfig.ExecStart = ''
-        ${getBin pkgs.prometheus-nftables-exporter}/bin/nftables_exporter ${concatStringsSep " " cfg.extraFlags} \
-        --web.listen-address "${cfg.listenAddress}:${toString cfg.port}"
-      '';
+      serviceConfig = {
+        Restart = "always";
+        PrivateTmp = true;
+        WorkingDirectory = "/tmp";
+        DynamicUser = false;
+        User = cfg.user;
+        Group = cfg.group;
+        AmbientCapabilities = [ "CAP_NET_ADMIN" "CAP_SYS_ADMIN" ];
+        ExecStart = ''
+          ${getBin package}/bin/nftables_exporter ${concatStringsSep " " cfg.extraFlags} \
+          --web.listen-address "${cfg.listenAddress}:${toString cfg.port}"
+        '';
+      };
     };
 
     services.prometheus.scrapeConfigs = mkIf cfg.enableLocalScraping [
