@@ -52,16 +52,16 @@ in
             Default URL of the Hue bridge to monitor
           '';
         };
-        hueApiKey = mkOption {
-          type = types.nullOr types.str;
-          default = null;
+        hueApiKeyFile = mkOption {
+          type = types.path;
           description = ''
+            Path to a file containing the Hue API key.
             Create a user as described in the docs at https://developers.meethue.com/develop/get-started-2
           '';
         };
-        default = { };
       };
     };
+    default = { };
   };
   config = mkIf cfg.enable {
     users.users."${cfg.user}" = {
@@ -71,24 +71,33 @@ in
     };
     users.groups."${cfg.group}" = { };
 
-    systemd.services."prometheus-${name}-exporter" = {
-      environment = { };
-      wantedBy = [ "multi-user.target" ];
-      after = [ "network.target" ];
-      serviceConfig.Restart = "always";
-      serviceConfig.PrivateTmp = true;
-      serviceConfig.WorkingDirectory = /tmp;
-      serviceConfig.DynamicUser = false;
-      serviceConfig.User = "${cfg.user}";
-      serviceConfig.Group = "${cfg.group}";
-      serviceConfig.ExecStart = ''
-        ${getBin pkgs.prometheus-hue-exporter}/bin/hue_exporter ${concatStringsSep " " cfg.extraFlags} \
-        -listen-address "${cfg.listenAddress}:${toString cfg.port}" \
-        -hue-url "${cfg.hueUrl}" \
-        -username "${cfg.hueApiKey}" \
-        -metrics-file "${pkgs.prometheus-hue-exporter}/share/hue_metrics.json"
-      '';
-    };
+    systemd.services."prometheus-${name}-exporter" =
+      let
+        wrapper = pkgs.writeShellScript "prometheus-${name}-exporter" ''
+          exec ${getBin pkgs.prometheus-hue-exporter}/bin/hue_exporter \
+            ${concatStringsSep " " cfg.extraFlags} \
+            -listen-address "${cfg.listenAddress}:${toString cfg.port}" \
+            -hue-url "${cfg.hueUrl}" \
+            -username "$(cat "$CREDENTIALS_DIRECTORY/hue-api-key")" \
+            -metrics-file "${pkgs.prometheus-hue-exporter}/share/hue_metrics.json"
+        '';
+      in
+      {
+        wantedBy = [ "multi-user.target" ];
+        after = [ "network.target" ];
+        serviceConfig = {
+          Restart = "always";
+          PrivateTmp = true;
+          WorkingDirectory = "/tmp";
+          DynamicUser = false;
+          User = cfg.user;
+          Group = cfg.group;
+          ExecStart = toString wrapper;
+          LoadCredential = [
+            "hue-api-key:${cfg.hueApiKeyFile}"
+          ];
+        };
+      };
 
     services.prometheus.scrapeConfigs = mkIf cfg.enableLocalScraping [
       {
