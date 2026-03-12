@@ -68,6 +68,7 @@
       overlays.default = import ./overlay.nix;
 
       nixosModules = (import ./modules) // {
+        multicast-relay = import ./modules/multicast-relay self;
         prometheus-hue-exporter = import ./modules/prometheus-hue-exporter self;
         prometheus-tplink-p110-exporter = inputs.prometheus-tplink-p110-exporter.nixosModules.default;
       };
