@@ -1,8 +1,10 @@
+self:
 { config, lib, pkgs, ... }:
 with lib;
 let
   cfg = config.services.prometheus-hue-exporter;
   name = "hue";
+  package = self.legacyPackages.${pkgs.system}.prometheus-hue-exporter;
 in
 {
   options.services.prometheus-hue-exporter = with types; mkOption {
@@ -74,12 +76,12 @@ in
     systemd.services."prometheus-${name}-exporter" =
       let
         wrapper = pkgs.writeShellScript "prometheus-${name}-exporter" ''
-          exec ${getBin pkgs.prometheus-hue-exporter}/bin/hue_exporter \
+          exec ${getBin package}/bin/hue_exporter \
             ${concatStringsSep " " cfg.extraFlags} \
             -listen-address "${cfg.listenAddress}:${toString cfg.port}" \
             -hue-url "${cfg.hueUrl}" \
             -username "$(cat "$CREDENTIALS_DIRECTORY/hue-api-key")" \
-            -metrics-file "${pkgs.prometheus-hue-exporter}/share/hue_metrics.json"
+            -metrics-file "${package}/share/hue_metrics.json"
         '';
       in
       {
