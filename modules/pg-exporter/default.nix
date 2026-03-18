@@ -67,6 +67,11 @@ in
           default = [ ];
           description = "Additional CLI flags to pass to pg_exporter.";
         };
+        user = mkOption {
+          type = types.nullOr types.str;
+          default = null;
+          description = "User to run the service as. If null, DynamicUser is used.";
+        };
         enableLocalScraping = mkEnableOption "scraping by local prometheus";
       };
     };
@@ -80,11 +85,15 @@ in
       after = [ "network.target" "postgresql.service" ];
       serviceConfig = {
         Restart = "always";
-        DynamicUser = true;
-        ProtectSystem = "strict";
         ProtectHome = true;
         PrivateTmp = true;
         NoNewPrivileges = true;
+      } // (if cfg.user != null then {
+        User = cfg.user;
+      } else {
+        DynamicUser = true;
+        ProtectSystem = "strict";
+      }) // {
         ExecStart = concatStringsSep " " ([
           "${getBin package}/bin/pg_exporter"
           "--config=${configDir}"
