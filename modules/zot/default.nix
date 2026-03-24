@@ -67,7 +67,29 @@ let
     };
   };
 
-  effectiveSettings = lib.recursiveUpdate (lib.recursiveUpdate defaultSettings authSettings) cfg.settings;
+  cleanKeepTag = kt: filterAttrs (_: v: v != null && v != [ ]) {
+    inherit (kt) patterns mostRecentlyPushedCount mostRecentlyPulledCount pulledWithin pushedWithin;
+  };
+
+  defaultRetentionPolicy = {
+    repositories = [ "**" ];
+    inherit (cfg.retention.defaultPolicy) deleteReferrers deleteUntagged;
+    keepTags = map cleanKeepTag cfg.retention.defaultPolicy.keepTags;
+  };
+
+  allRetentionPolicies = (map (p: {
+    inherit (p) repositories deleteReferrers deleteUntagged;
+    keepTags = map cleanKeepTag p.keepTags;
+  }) cfg.retention.policies) ++ [ defaultRetentionPolicy ];
+
+  retentionSettings = {
+    storage.retention = {
+      inherit (cfg.retention) dryRun delay;
+      policies = allRetentionPolicies;
+    };
+  };
+
+  effectiveSettings = lib.recursiveUpdate (lib.recursiveUpdate (lib.recursiveUpdate defaultSettings authSettings) retentionSettings) cfg.settings;
   configFile = settingsFormat.generate "zot-config.json" effectiveSettings;
 
   generateHtpasswd = let
@@ -197,6 +219,118 @@ in
             type = types.bool;
             default = false;
             description = "Use DNS-01 challenge instead of HTTP-01. Requires security.acme.defaults.dnsProvider to be configured.";
+          };
+        };
+        retention = {
+          dryRun = mkOption {
+            type = types.bool;
+            default = false;
+            description = "Log removal actions without actually removing.";
+          };
+          delay = mkOption {
+            type = types.str;
+            default = "24h";
+            description = "Only remove untagged/referrers older than this duration.";
+          };
+          policies = mkOption {
+            type = types.listOf (types.submodule {
+              options = {
+                repositories = mkOption {
+                  type = types.listOf types.str;
+                  description = "Glob patterns matching repository names.";
+                };
+                deleteReferrers = mkOption {
+                  type = types.bool;
+                  default = false;
+                  description = "Delete manifests with a missing subject.";
+                };
+                deleteUntagged = mkOption {
+                  type = types.bool;
+                  default = true;
+                  description = "Delete untagged manifests.";
+                };
+                keepTags = mkOption {
+                  type = types.listOf (types.submodule {
+                    options = {
+                      patterns = mkOption {
+                        type = types.listOf types.str;
+                        default = [ ];
+                        description = "Regex patterns matching tag names to retain.";
+                      };
+                      mostRecentlyPushedCount = mkOption {
+                        type = types.nullOr types.int;
+                        default = null;
+                        description = "Retain the N most recently pushed tags.";
+                      };
+                      mostRecentlyPulledCount = mkOption {
+                        type = types.nullOr types.int;
+                        default = null;
+                        description = "Retain the N most recently pulled tags.";
+                      };
+                      pulledWithin = mkOption {
+                        type = types.nullOr types.str;
+                        default = null;
+                        description = "Retain tags pulled within this duration (e.g. \"168h\").";
+                      };
+                      pushedWithin = mkOption {
+                        type = types.nullOr types.str;
+                        default = null;
+                        description = "Retain tags pushed within this duration (e.g. \"168h\").";
+                      };
+                    };
+                  });
+                  default = [ ];
+                  description = "Rules for which tags to retain. Tags not matching any rule are removed.";
+                };
+              };
+            });
+            default = [ ];
+            description = "Repo-specific retention policies, prepended before the default catch-all. First match wins.";
+          };
+          defaultPolicy = {
+            deleteReferrers = mkOption {
+              type = types.bool;
+              default = false;
+              description = "Delete manifests with a missing subject in the catch-all policy.";
+            };
+            deleteUntagged = mkOption {
+              type = types.bool;
+              default = true;
+              description = "Delete untagged manifests in the catch-all policy.";
+            };
+            keepTags = mkOption {
+              type = types.listOf (types.submodule {
+                options = {
+                  patterns = mkOption {
+                    type = types.listOf types.str;
+                    default = [ ];
+                    description = "Regex patterns matching tag names to retain.";
+                  };
+                  mostRecentlyPushedCount = mkOption {
+                    type = types.nullOr types.int;
+                    default = null;
+                    description = "Retain the N most recently pushed tags.";
+                  };
+                  mostRecentlyPulledCount = mkOption {
+                    type = types.nullOr types.int;
+                    default = null;
+                    description = "Retain the N most recently pulled tags.";
+                  };
+                  pulledWithin = mkOption {
+                    type = types.nullOr types.str;
+                    default = null;
+                    description = "Retain tags pulled within this duration.";
+                  };
+                  pushedWithin = mkOption {
+                    type = types.nullOr types.str;
+                    default = null;
+                    description = "Retain tags pushed within this duration.";
+                  };
+                };
+              });
+              default = [{ patterns = [ ".*" ]; }];
+              description = "Tag retention rules for the default catch-all policy. Default keeps all tags.";
+            };
           };
         };
         enableLocalScraping = mkEnableOption "scraping by local prometheus";
