@@ -6,8 +6,14 @@ let
   package = self.legacyPackages.${pkgs.system}.zot;
   settingsFormat = pkgs.formats.json { };
 
-  hasUsers = cfg.auth.users != { };
-  adminUsers = attrNames (filterAttrs (_: u: u.admin) cfg.auth.users);
+  hasAuthUsers = cfg.auth.users != { };
+  hasMetricsUser = cfg.metrics.enable && hasAuthUsers;
+  metricsPasswordFile = pkgs.writeText "zot-metrics-password" cfg.metrics.password;
+  allUsers = cfg.auth.users // optionalAttrs hasMetricsUser {
+    ${cfg.metrics.user} = { passwordFile = metricsPasswordFile; admin = false; };
+  };
+  hasUsers = allUsers != { };
+  adminUsers = attrNames (filterAttrs (_: u: u.admin) allUsers);
   htpasswdPath = "${cfg.dataDir}/htpasswd";
 
   defaultSettings = {
@@ -19,7 +25,7 @@ let
       gcInterval = "6h";
     };
     http = {
-      address = "127.0.0.1";
+      address = "0.0.0.0";
       port = "8080";
     };
     log.level = "info";
@@ -63,6 +69,8 @@ let
           users = adminUsers;
           actions = cfg.accessControl.adminActions;
         };
+      } // optionalAttrs hasMetricsUser {
+        metrics.users = [ cfg.metrics.user ];
       };
     };
   };
@@ -93,10 +101,10 @@ let
   configFile = settingsFormat.generate "zot-config.json" effectiveSettings;
 
   generateHtpasswd = let
-    userNames = attrNames cfg.auth.users;
+    userNames = attrNames allUsers;
     commands = imap0 (i: name:
       let
-        u = cfg.auth.users.${name};
+        u = allUsers.${name};
         flags = if i == 0 then "-Bci" else "-Bi";
       in
       "${pkgs.apacheHttpd}/bin/htpasswd ${flags} ${escapeShellArg htpasswdPath} ${escapeShellArg name} < ${escapeShellArg (toString u.passwordFile)}"
@@ -333,6 +341,23 @@ in
             };
           };
         };
+        metrics = {
+          enable = mkOption {
+            type = types.bool;
+            default = true;
+            description = "Enable a dedicated metrics user for prometheus scraping.";
+          };
+          user = mkOption {
+            type = types.str;
+            default = "prometheus";
+            description = "Username for the metrics scraping user.";
+          };
+          password = mkOption {
+            type = types.str;
+            default = "prometheus";
+            description = "Password for the metrics scraping user.";
+          };
+        };
         enableLocalScraping = mkEnableOption "scraping by local prometheus";
         grafanaDashboard = mkEnableOption "Grafana dashboard provisioning for Zot";
       };
@@ -375,6 +400,10 @@ in
         job_name = "zot";
         honor_labels = true;
         metrics_path = effectiveSettings.extensions.metrics.prometheus.path or "/metrics";
+        basic_auth = mkIf cfg.metrics.enable {
+          username = cfg.metrics.user;
+          password = cfg.metrics.password;
+        };
         static_configs = [{
           targets = [ "${effectiveSettings.http.address}:${effectiveSettings.http.port}" ];
         }];
@@ -395,8 +424,11 @@ in
       forceSSL = cfg.nginx.forceSSL;
       enableACME = cfg.nginx.acme;
       acmeRoot = mkIf (cfg.nginx.acme && cfg.nginx.acmeDns01) null;
+      locations."/metrics" = {
+        return = "403";
+      };
       locations."/" = {
-        proxyPass = "http://${effectiveSettings.http.address}:${effectiveSettings.http.port}/";
+        proxyPass = "http://127.0.0.1:${effectiveSettings.http.port}/";
         extraConfig = ''
           client_max_body_size 0;
           proxy_buffering off;
