@@ -455,11 +455,11 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1775153135,
-        "narHash": "sha256-i0J5QrT23yN9Jggs6wPba2CEVhCiPn/fQ/hRdjDpjWE=",
+        "lastModified": 1775160892,
+        "narHash": "sha256-mh2MmxGGl8mI0zTyO1f057Y0yt7Rrh/setwCw4FYRCs=",
         "owner": "ijohanne",
         "repo": "prometheus-gpsd-exporter",
-        "rev": "5964679a78ce29777e72832a30feb3123bd15808",
+        "rev": "1df6dade847500a4598766c570c9212bcd37371d",
         "type": "github"
       },
       "original": {
