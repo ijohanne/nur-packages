@@ -315,11 +315,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775594559,
-        "narHash": "sha256-GLUsaH/aNEX3a/g1+TJtUmpfA2Q4ji2572YiUj6uEZ0=",
+        "lastModified": 1775595117,
+        "narHash": "sha256-2A66Xgv6K3+h3BB60RwmN2QgRswpKGFfhv1hZYbOPzM=",
         "owner": "ijohanne",
         "repo": "hrafnsyn",
-        "rev": "170839878b4ad4bdf0a18bf0fe489f57eb03eac8",
+        "rev": "f14b2c0011ebaee97223d2e432904b9f8beecab7",
         "type": "github"
       },
       "original": {
